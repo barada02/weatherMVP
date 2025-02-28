@@ -3,12 +3,15 @@
   <div class="weather-info">
     <div class="main-temp">
       {{ weatherData.temperature }}°C
+      
     </div>
+    <span class="description">{{ weatherData.description }}</span>
     <div class="weather-details">
       <p>Humidity: {{ weatherData.humidity }}%</p>
       <p>Wind Speed: {{ weatherData.windSpeed }} m/s</p>
       <p>Precipitation: {{ weatherData.precipitation }}%</p>
       <p>Cloud Cover: {{ weatherData.cloudCover }}%</p>
+      <p>UV Index: {{ weatherData.uvIndex }}</p>
     </div>
   </div>
 </div>

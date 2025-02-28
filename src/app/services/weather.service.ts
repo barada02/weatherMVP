@@ -12,6 +12,7 @@ export interface WeatherData {
   windSpeed: number;
   precipitation: number;
   cloudCover: number;
+  uvIndex: number;
 }
 
 export interface TomorrowApiResponse {
@@ -23,6 +24,7 @@ export interface TomorrowApiResponse {
       windSpeed: number;
       precipitationProbability: number;
       cloudCover: number;
+      uvIndex: number;
     };
   };
   location: {
@@ -52,7 +54,7 @@ export class WeatherService {
         }
 
         return {
-          city: city,
+          city: response.location.name,
           temperature: response.data.values.temperature,
           description: this.getWeatherDescription(
             response.data.values.cloudCover,
@@ -61,7 +63,8 @@ export class WeatherService {
           humidity: response.data.values.humidity,
           windSpeed: response.data.values.windSpeed,
           precipitation: response.data.values.precipitationProbability,
-          cloudCover: response.data.values.cloudCover
+          cloudCover: response.data.values.cloudCover,
+          uvIndex: response.data.values.uvIndex
         };
       }),
       catchError(error => {
