@@ -8,28 +8,8 @@ import { WeatherService } from './services/weather.service';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, SearchBarComponent, WeatherDisplayComponent],
-  template: `
-    <div class="app-container">
-      <h1>Weather MVP</h1>
-      <app-search-bar (searchLocation)="onSearchLocation($event)"></app-search-bar>
-      <app-weather-display 
-        [weatherData]="weatherData" 
-        [error]="error">
-      </app-weather-display>
-    </div>
-  `,
-  styles: [`
-    .app-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #333;
-      margin-bottom: 20px;
-    }
-  `]
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   weatherData: any = null;
