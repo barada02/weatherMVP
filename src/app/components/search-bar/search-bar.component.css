@@ -1,29 +1,57 @@
 .search-container {
   display: flex;
   gap: 10px;
-  padding: 20px;
+  padding: 15px;
   justify-content: center;
+  background: linear-gradient(to right, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 input {
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 8px 16px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
   width: 250px;
   font-size: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+input::placeholder {
+  color: #adb5bd;
 }
 
 button {
-  padding: 8px 16px;
-  background-color: #007bff;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 20px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s ease;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-  background-color: #0056b3;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #0056b3, #004094);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
