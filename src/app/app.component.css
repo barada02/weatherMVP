@@ -1,11 +1,11 @@
-.app-container {
-  max-width: 1200px;
+.container {
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
 
 h1 {
   text-align: center;
-  color: #333;
-  margin-bottom: 20px;
+  color: #343a40;
+  margin-bottom: 30px;
 }

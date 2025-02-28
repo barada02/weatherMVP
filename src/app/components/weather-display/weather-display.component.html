@@ -1,35 +1,17 @@
 <div class="weather-container" *ngIf="weatherData">
-  <div class="weather-header">
-    <h2>Current Weather</h2>
-    <p class="time">{{ weatherData.time | date:'medium' }}</p>
-  </div>
-  <div class="weather-grid">
-    <div class="weather-item" *ngIf="weatherData.values.temperature !== undefined">
-      <span class="label">Temperature</span>
-      <span class="value">{{ weatherData.values.temperature }}°C</span>
+  <h2>{{ weatherData.city }}</h2>
+  <div class="weather-info">
+    <div class="main-temp">
+      {{ weatherData.temperature }}°C
     </div>
-    <div class="weather-item" *ngIf="weatherData.values.humidity !== undefined">
-      <span class="label">Humidity</span>
-      <span class="value">{{ weatherData.values.humidity }}%</span>
-    </div>
-    <div class="weather-item" *ngIf="weatherData.values.cloudCover !== undefined">
-      <span class="label">Cloud Cover</span>
-      <span class="value">{{ weatherData.values.cloudCover }}%</span>
-    </div>
-    <div class="weather-item" *ngIf="weatherData.values.precipitationProbability !== undefined">
-      <span class="label">Precipitation</span>
-      <span class="value">{{ weatherData.values.precipitationProbability }}%</span>
-    </div>
-    <div class="weather-item" *ngIf="weatherData.values.windSpeed !== undefined">
-      <span class="label">Wind Speed</span>
-      <span class="value">{{ weatherData.values.windSpeed }} m/s</span>
-    </div>
-    <div class="weather-item" *ngIf="weatherData.values.pressureSeaLevel !== undefined">
-      <span class="label">Pressure</span>
-      <span class="value">{{ weatherData.values.pressureSeaLevel }} hPa</span>
+    <div class="weather-details">
+      <p>Humidity: {{ weatherData.humidity }}%</p>
+      <p>Wind Speed: {{ weatherData.windSpeed }} m/s</p>
+      <p>Precipitation: {{ weatherData.precipitation }}%</p>
+      <p>Cloud Cover: {{ weatherData.cloudCover }}%</p>
     </div>
   </div>
 </div>
-<div class="error-message" *ngIf="error">
-  {{ error }}
+<div class="error-message" *ngIf="errorMessage">
+  {{ errorMessage }}
 </div>
