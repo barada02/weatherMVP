@@ -5,18 +5,20 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #6ab7ff 0%, #b8e0ff 100%);
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
   overflow: hidden;
 }
 
 h1 {
   text-align: center;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.95);
   margin: 10px 0;
   font-size: 28px;
   font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  letter-spacing: 2px;
 }
 
 /* Add this to your styles.css or index.css for global styles */
