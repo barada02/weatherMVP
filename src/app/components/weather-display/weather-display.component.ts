@@ -22,6 +22,30 @@ export class WeatherDisplayComponent implements OnChanges {
     }
   }
 
+  getWeatherIcon(description: string): string {
+    const desc = description.toLowerCase();
+    if (desc.includes('clear') || desc.includes('sunny')) {
+      return 'fas fa-sun';
+    } else if (desc.includes('cloud')) {
+      if (desc.includes('scattered') || desc.includes('broken')) {
+        return 'fas fa-cloud-sun';
+      }
+      return 'fas fa-cloud';
+    } else if (desc.includes('rain')) {
+      if (desc.includes('light')) {
+        return 'fas fa-cloud-rain';
+      }
+      return 'fas fa-cloud-showers-heavy';
+    } else if (desc.includes('thunder')) {
+      return 'fas fa-bolt';
+    } else if (desc.includes('snow')) {
+      return 'fas fa-snowflake';
+    } else if (desc.includes('mist') || desc.includes('fog')) {
+      return 'fas fa-smog';
+    }
+    return 'fas fa-cloud'; // default icon
+  }
+
   private getWeatherData() {
     this.weatherService.getWeatherData(this.location).subscribe({
       next: (data) => {
