@@ -1,12 +1,12 @@
 <div class="weather-container" *ngIf="weatherData">
   <div class="weather-card">
     <div class="location-info">
-      <h2>{{ weatherData.city }}</h2>
+      <div class="location-name">{{ weatherData.city }}</div>
       <div class="weather-icon">
         <i [class]="getWeatherIcon(weatherData.description)"></i>
       </div>
     </div>
-    
+
     <div class="main-info">
       <div class="temperature">
         <span class="temp-value">{{ weatherData.temperature }}</span>
@@ -20,8 +20,8 @@
         <i class="fas fa-tint"></i>
         <div class="metric-content">
           <span class="metric-label">Humidity</span>
-          <div class="metric-value">
-            {{ weatherData.humidity }}%
+          <div class="value-bar">
+            <span>{{ weatherData.humidity }}%</span>
             <div class="progress-bar">
               <div class="progress" [style.width]="weatherData.humidity + '%'"></div>
             </div>
@@ -33,7 +33,7 @@
         <i class="fas fa-wind"></i>
         <div class="metric-content">
           <span class="metric-label">Wind Speed</span>
-          <span class="metric-value">{{ weatherData.windSpeed }} m/s</span>
+          <span class="value">{{ weatherData.windSpeed }} m/s</span>
         </div>
       </div>
 
@@ -41,8 +41,8 @@
         <i class="fas fa-cloud-rain"></i>
         <div class="metric-content">
           <span class="metric-label">Precipitation</span>
-          <div class="metric-value">
-            {{ weatherData.precipitation }}%
+          <div class="value-bar">
+            <span>{{ weatherData.precipitation }}%</span>
             <div class="progress-bar">
               <div class="progress" [style.width]="weatherData.precipitation + '%'"></div>
             </div>
@@ -54,8 +54,8 @@
         <i class="fas fa-cloud"></i>
         <div class="metric-content">
           <span class="metric-label">Cloud Cover</span>
-          <div class="metric-value">
-            {{ weatherData.cloudCover }}%
+          <div class="value-bar">
+            <span>{{ weatherData.cloudCover }}%</span>
             <div class="progress-bar">
               <div class="progress" [style.width]="weatherData.cloudCover + '%'"></div>
             </div>
@@ -67,7 +67,7 @@
         <i class="fas fa-sun"></i>
         <div class="metric-content">
           <span class="metric-label">UV Index</span>
-          <span class="metric-value">{{ weatherData.uvIndex }}</span>
+          <span class="value">{{ weatherData.uvIndex }}</span>
         </div>
       </div>
     </div>

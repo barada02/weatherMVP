@@ -9,42 +9,43 @@
 
 .weather-card {
   width: 100%;
-  max-width: 1200px;
+  max-width: 800px;
+  height: auto;
   padding: 30px;
   border-radius: 24px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(73, 80, 107, 0.35);
   backdrop-filter: blur(15px);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  display: grid;
-  grid-template-rows: auto auto 1fr;
-  gap: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .location-info {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  position: relative;
+  padding: 0 10px;
 }
 
-h2 {
+.location-name {
   color: rgba(255, 255, 255, 0.95);
-  font-size: 28px;
-  font-weight: 600;
-  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
   text-transform: capitalize;
 }
 
 .weather-icon {
-  font-size: 36px;
+  position: absolute;
+  right: 10px;
+  font-size: 28px;
   color: rgba(255, 255, 255, 0.9);
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 .main-info {
   text-align: center;
-  padding: 20px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .temperature {
@@ -55,51 +56,45 @@ h2 {
 }
 
 .temp-value {
-  font-size: 72px;
-  font-weight: 700;
+  font-size: 64px;
+  font-weight: 500;
   color: rgba(255, 255, 255, 0.95);
   line-height: 1;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .temp-unit {
-  font-size: 32px;
+  font-size: 28px;
   color: rgba(255, 255, 255, 0.8);
   margin-left: 5px;
 }
 
 .description {
-  font-size: 24px;
+  font-size: 20px;
   color: rgba(255, 255, 255, 0.85);
   text-transform: capitalize;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .metrics-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  padding: 0 10px;
 }
 
 .metric-item {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   padding: 20px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 15px;
-  transition: all 0.3s ease;
-}
-
-.metric-item:hover {
-  background: rgba(255, 255, 255, 0.12);
-  transform: translateY(-2px);
 }
 
 .metric-item i {
-  font-size: 24px;
+  font-size: 20px;
   color: rgba(255, 255, 255, 0.9);
-  width: 24px;
+  width: 20px;
   text-align: center;
 }
 
@@ -114,10 +109,22 @@ h2 {
   margin-bottom: 8px;
 }
 
-.metric-value {
+.value {
   color: rgba(255, 255, 255, 0.9);
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.value-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.value-bar span {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .progress-bar {
@@ -125,7 +132,6 @@ h2 {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 2px;
   overflow: hidden;
-  margin-top: 8px;
 }
 
 .progress {
@@ -156,16 +162,13 @@ h2 {
   font-size: 20px;
 }
 
-@media (max-width: 1200px) {
-  .metrics-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 768px) {
+  .weather-container {
+    padding: 15px;
+  }
+
   .weather-card {
     padding: 20px;
-    gap: 20px;
   }
 
   .metrics-grid {
@@ -174,15 +177,15 @@ h2 {
   }
 
   .temp-value {
-    font-size: 56px;
+    font-size: 48px;
   }
 
   .temp-unit {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .description {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .metric-item {
