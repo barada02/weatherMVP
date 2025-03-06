@@ -1,20 +1,78 @@
 <div class="weather-container" *ngIf="weatherData">
-  <h2>{{ weatherData.city }}</h2>
-  <div class="weather-info">
-    <div class="main-temp">
-      {{ weatherData.temperature }}°C
-      
+  <div class="location-info">
+    <h2>{{ weatherData.city }}</h2>
+    <div class="weather-icon">
+      <i [class]="getWeatherIcon(weatherData.description)"></i>
+    </div>
+  </div>
+  
+  <div class="main-info">
+    <div class="temperature">
+      <span class="temp-value">{{ weatherData.temperature }}</span>
+      <span class="temp-unit">°C</span>
     </div>
     <span class="description">{{ weatherData.description }}</span>
-    <div class="weather-details">
-      <p>Humidity: {{ weatherData.humidity }}%</p>
-      <p>Wind Speed: {{ weatherData.windSpeed }} m/s</p>
-      <p>Precipitation: {{ weatherData.precipitation }}%</p>
-      <p>Cloud Cover: {{ weatherData.cloudCover }}%</p>
-      <p>UV Index: {{ weatherData.uvIndex }}</p>
+  </div>
+
+  <div class="weather-grid">
+    <div class="weather-item">
+      <i class="fas fa-tint"></i>
+      <div class="item-details">
+        <span class="label">Humidity</span>
+        <div class="value-container">
+          <span class="value">{{ weatherData.humidity }}%</span>
+          <div class="progress-bar">
+            <div class="progress" [style.width]="weatherData.humidity + '%'"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-item">
+      <i class="fas fa-wind"></i>
+      <div class="item-details">
+        <span class="label">Wind Speed</span>
+        <span class="value">{{ weatherData.windSpeed }} m/s</span>
+      </div>
+    </div>
+
+    <div class="weather-item">
+      <i class="fas fa-cloud-rain"></i>
+      <div class="item-details">
+        <span class="label">Precipitation</span>
+        <div class="value-container">
+          <span class="value">{{ weatherData.precipitation }}%</span>
+          <div class="progress-bar">
+            <div class="progress" [style.width]="weatherData.precipitation + '%'"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-item">
+      <i class="fas fa-cloud"></i>
+      <div class="item-details">
+        <span class="label">Cloud Cover</span>
+        <div class="value-container">
+          <span class="value">{{ weatherData.cloudCover }}%</span>
+          <div class="progress-bar">
+            <div class="progress" [style.width]="weatherData.cloudCover + '%'"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-item">
+      <i class="fas fa-sun"></i>
+      <div class="item-details">
+        <span class="label">UV Index</span>
+        <span class="value">{{ weatherData.uvIndex }}</span>
+      </div>
     </div>
   </div>
 </div>
+
 <div class="error-message" *ngIf="errorMessage">
+  <i class="fas fa-exclamation-circle"></i>
   {{ errorMessage }}
 </div>
