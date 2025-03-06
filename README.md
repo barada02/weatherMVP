@@ -2,6 +2,18 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.5.
 
+## Setup
+
+1. Clone the repository
+2. Install dependencies:
+```bash
+npm install
+```
+3. Set up your environment:
+   - Copy `src/environments/environment.example.ts` to `src/environments/environment.ts`
+   - Get your API key from [Tomorrow.io](https://tomorrow.io)
+   - Replace `YOUR_TOMORROW_IO_API_KEY_HERE` in `environment.ts` with your actual API key
+
 ## Development server
 
 To start a local development server, run:
